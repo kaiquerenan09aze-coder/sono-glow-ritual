@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Bell, BellOff, Clock } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Check, Bell, BellOff, Clock, Sparkles } from "lucide-react";
+import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -10,13 +10,24 @@ const Challenge = () => {
   const [reminderEnabled, setReminderEnabled] = useState(false);
   const [reminderTime, setReminderTime] = useState("21:00");
 
+  const motivationalPhrases = [
+    "🌙 Primeiro passo dado! Seu corpo já começa a agradecer.",
+    "✨ Duas noites! Seu metabolismo está se ajustando.",
+    "🔥 Três noites seguidas! A queima noturna está ativando.",
+    "💪 Metade do caminho! Você é mais forte do que imagina.",
+    "🌟 Cinco noites! Seu corpo já sente a diferença.",
+    "🚀 Quase lá! Uma guerreira de verdade!",
+    "🏆 DESAFIO COMPLETO! Você é incrível! Seu metabolismo nunca mais será o mesmo."
+  ];
+
   const toggleDay = (index: number) => {
     const newDays = [...completedDays];
     newDays[index] = !newDays[index];
     setCompletedDays(newDays);
     
     if (newDays[index]) {
-      toast.success("Dia marcado como concluído! Parabéns!");
+      const completed = newDays.filter(Boolean).length;
+      toast.success(motivationalPhrases[completed - 1] || "Dia marcado como concluído!");
     }
   };
 
