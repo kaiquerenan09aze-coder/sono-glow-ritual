@@ -45,11 +45,11 @@ const Dashboard = () => {
               <Trophy className="h-5 w-5 text-yellow-500" />
               <h2 className="font-semibold text-foreground">Seu Progresso</h2>
             </div>
-            <span className="text-sm font-medium text-muted-foreground">Dia 3 de 7</span>
+            <span className="text-sm font-medium text-muted-foreground">Dia 0 de 7</span>
           </div>
-          <Progress value={42} className="h-3 bg-secondary" />
+          <Progress value={0} className="h-3 bg-secondary" />
           <p className="mt-2 text-xs text-muted-foreground text-center">
-            Você está indo muito bem! Continue constante.
+            Comece seu primeiro ritual noturno hoje!
           </p>
         </CardContent>
       </Card>
